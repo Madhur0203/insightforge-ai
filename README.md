@@ -1,285 +1,249 @@
 # InsightForge AI
-MIT License
-## Autonomous Data Intelligence Platform
+### Autonomous Data Intelligence Platform
 
-InsightForge AI is an automated analytics platform that transforms raw datasets into actionable business intelligence.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![NextJS](https://img.shields.io/badge/Next.js-Frontend-black)
+![React](https://img.shields.io/badge/React-UI-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Project-Active-success)
 
-Users can upload structured datasets (CSV, Excel, JSON, SQL exports), and the platform automatically analyzes the data to generate:
+InsightForge AI is an **Autonomous Data Intelligence Platform** that transforms raw datasets into meaningful business insights automatically.
 
-• KPI summaries  
-• Interactive dashboards  
-• Chart recommendations  
-• Anomaly detection  
-• Dataset explanations  
-• AI-generated insights  
+Users can upload structured datasets (CSV, Excel, JSON, SQL exports), and the system automatically performs:
 
-The system automatically understands the structure of any dataset and builds meaningful analytics without manual configuration.
+- Data profiling
+- Semantic column detection
+- Dataset classification
+- Statistical analysis
+- Chart intelligence
+- Dashboard generation
+- Anomaly detection
+- Dataset explanation
 
----
-
-# Project Vision
-
-Modern organizations collect large volumes of data but spend significant time preparing and analyzing it.
-
-InsightForge AI aims to solve this problem by creating an **autonomous data intelligence engine** capable of:
-
-• Understanding dataset structure  
-• Detecting important metrics and categories  
-• Generating visual dashboards automatically  
-• Highlighting anomalies and patterns  
-
-The platform functions as a lightweight automated version of tools such as:
-
-• Tableau  
-• Power BI  
-• Looker  
-• ThoughtSpot  
+The platform acts as an **AI-powered automated analytics engine** similar to tools like Tableau or Power BI, but capable of **automatically understanding datasets without manual configuration**.
 
 ---
 
-# System Architecture
+# Platform Architecture
 
-InsightForge follows a modular analytics pipeline.
-
-Dataset Upload  
-↓  
-Data Ingestion Engine  
-↓  
-Header Detection & Schema Normalization  
-↓  
-Column Profiling Engine  
-↓  
-Semantic Role Detection  
-↓  
-Dataset Classification  
-↓  
-Analytics Planning Engine  
-↓  
-Statistical Analysis Engine  
-↓  
-Auto Chart Intelligence Engine  
-↓  
-KPI Generation  
-↓  
-Anomaly Detection Engine  
-↓  
-Interactive Dashboard Builder  
-
-Each stage operates independently, making the system scalable and extensible.
+```text
+                +------------------------+
+                |     Dataset Upload     |
+                | CSV / Excel / JSON     |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                |    Data Ingestion      |
+                | Header Detection       |
+                | Schema Normalization   |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                |     Data Profiling     |
+                | Column Statistics      |
+                | Missing Values         |
+                | Data Types             |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                | Semantic Column Engine |
+                | Metric Detection       |
+                | Category Detection     |
+                | Date Detection         |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                | Dataset Classification |
+                | Transaction / Master   |
+                | Time-Series Detection  |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                | Analytics Planner      |
+                | Select Analysis Types  |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                | Analysis Engine        |
+                | Descriptive Stats      |
+                | KPI Generation         |
+                | Chart Intelligence     |
+                | Anomaly Detection      |
+                +-----------+------------+
+                            |
+                            v
+                +------------------------+
+                | Dashboard Builder      |
+                | Charts + Filters       |
+                | KPI Cards              |
+                +------------------------+
+```
 
 ---
 
-# Core Features
+# Analytics Pipeline
 
-## Universal Dataset Upload
-
-The platform accepts multiple dataset formats.
-
-Supported formats
-
-• CSV  
-• Excel (.xlsx / .xls)  
-• JSON  
-• SQL exports  
-
-The ingestion engine automatically handles:
-
-• Report-style Excel files  
-• Title rows  
-• Merged headers  
-• Column normalization  
-• Missing values  
+```text
+Dataset
+  ↓
+Profiling
+  ↓
+Semantic Detection
+  ↓
+Dataset Classification
+  ↓
+Analytics Planning
+  ↓
+Statistics Engine
+  ↓
+Chart Intelligence
+  ↓
+Anomaly Detection
+  ↓
+Interactive Dashboard
+```
 
 ---
 
-## Data Profiling Engine
+# Key Features
 
-Each column is analyzed to extract metadata.
+## Universal Dataset Support
 
-The system calculates:
+Supported formats:
 
-• Data type  
-• Missing value percentage  
-• Unique values  
-• Numeric confidence  
-• Datetime confidence  
-• Sample values  
+- CSV
+- Excel (.xlsx / .xls)
+- JSON
+- SQL exports
+
+Handles:
+
+- report-style Excel files
+- multi-row headers
+- messy column names
+- missing values
+
+---
+
+## Automatic Data Profiling
+
+Each column is analyzed to determine:
+
+- data type
+- null percentage
+- unique values
+- numeric confidence
+- datetime confidence
 
 Example
 
-Column: No. of Policies  
-Type: Numeric  
-Unique values: 187  
-Numeric confidence: 0.98  
-
-This metadata becomes the foundation for semantic analysis.
+```
+Column: Premium
+Type: Numeric
+Missing Values: 0.02%
+Unique Values: 1450
+```
 
 ---
 
 ## Semantic Column Detection
 
-InsightForge determines the role of each column automatically.
+The system determines column roles automatically.
 
-Detected roles include
+Roles detected:
 
-• Metric  
-• Category  
-• Entity  
-• Identifier  
-• Date  
-
-Example
-
-Zone Name → Category  
-Division Name → Category  
-Agent Cd → Identifier  
-No. of Policies → Metric  
-FPI → Metric  
-
-This allows the system to understand how the dataset should be analyzed.
-
----
-
-## Dataset Classification
-
-The platform automatically determines the dataset type.
-
-Examples
-
-• Transaction dataset  
-• Master record table  
-• Time series dataset  
-• Event log  
-• Generic tabular dataset  
-
-This classification guides the analytics planner.
-
----
-
-## Analytics Planning Engine
-
-Based on detected column roles, the system builds an analysis plan.
+- Metric
+- Category
+- Entity
+- Identifier
+- Date
 
 Example
 
-metric_columns  
-- No. of Policies  
-- FPI  
-
-category_columns  
-- Zone Name  
-- Division Name  
-- Agent Cd  
-
-recommended_analyses  
-- Descriptive statistics  
-- Category comparison  
-- Anomaly detection  
-- Dashboard generation  
+```
+Zone Name → Category
+Division Name → Category
+Agent Code → Identifier
+No. of Policies → Metric
+FPI → Metric
+```
 
 ---
 
-## Statistical Analysis Engine
+## Auto Chart Intelligence
 
-InsightForge automatically computes descriptive statistics for metrics.
+The system automatically selects the best visualization.
 
-Example output
+| Data Pattern | Chart |
+|---|---|
+| Date + Metric | Line Chart |
+| Category + Metric | Bar Chart |
+| Small Category Set | Pie Chart |
+| Metric + Metric | Scatter Plot |
 
-Metric: No. of Policies  
+Supported charts:
 
-count: 5194  
-mean: 23.1  
-median: 18  
-min: 0  
-max: 210  
-
-These statistics feed into dashboards and insights.
-
----
-
-## Auto Chart Intelligence Engine
-
-The system automatically selects the best chart types based on dataset structure.
-
-Supported charts
-
-• Line charts  
-• Area charts  
-• Bar charts  
-• Horizontal bar charts  
-• Pie charts  
-• Donut charts  
-• Scatter plots  
-• Summary charts  
-
-Example chart mapping
-
-Date + Metric → Line Chart  
-Category + Metric → Bar Chart  
-Small Category Set → Pie Chart  
-Metric + Metric → Scatter Plot  
+- Line charts
+- Bar charts
+- Area charts
+- Pie charts
+- Scatter plots
+- Distribution charts
 
 ---
 
 ## Interactive Dashboard
 
-InsightForge automatically generates dashboards containing:
+Generated dashboard includes:
 
-• KPI cards  
-• Dynamic charts  
-• Filter controls  
-• Anomaly summaries  
-• Dataset explanations  
-
-The layout adapts automatically depending on the dataset structure.
+- KPI cards
+- Interactive charts
+- Dataset filters
+- Anomaly summary
+- Dataset explanation
 
 ---
 
-## Anomaly Detection Engine
+## Anomaly Detection
 
-InsightForge detects unusual patterns in numeric metrics.
+Current statistical methods:
 
-Current statistical methods
+- IQR (Interquartile Range)
+- Z-score
 
-• Interquartile Range (IQR)  
-• Z-Score  
+Example anomaly:
 
-Example anomaly output
-
-Metric: Premium  
-
-Anomaly Count: 12  
-
-Date: 2021-08-15  
-Value: 540000  
-Severity: High  
+```
+Metric: Premium
+Date: 2019-07-02
+Value: 600000
+Severity: High
+```
 
 ---
 
-## Dataset Explanation Engine
+# Screenshots
 
-The system automatically explains the dataset.
+Add screenshots after deploying your frontend.
 
-Example output
+Example:
 
-Dataset Type: Insurance Agent Performance  
+```
+docs/screenshots/dashboard.png
+docs/screenshots/upload.png
+docs/screenshots/anomalies.png
+```
 
-Rows: 5194  
-Columns: 8  
+Example display:
 
-Key Metrics  
-• No. of Policies  
-• FPI  
-
-Key Dimensions  
-• Zone Name  
-• Division Name  
-• Agent Code  
-
-Insights  
-
-• West Zone generates the highest policy volume  
-• Agents with higher FPI tend to sell more policies  
+![Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
@@ -292,13 +256,13 @@ FastAPI
 Pandas  
 NumPy  
 
-Core modules
+Core modules:
 
-• Data ingestion  
-• Profiling engine  
-• Semantic detection  
-• Analytics engine  
-• Visualization engine  
+- ingestion engine
+- profiling engine
+- semantic analysis
+- analytics engine
+- visualization planner
 
 ---
 
@@ -308,83 +272,126 @@ Next.js
 React  
 Recharts  
 
-Features
+Features:
 
-• Interactive dashboards  
-• Dynamic filters  
-• Auto chart rendering  
-• Responsive UI  
+- responsive UI
+- dynamic dashboards
+- filter interactions
+- chart rendering
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Madhur0203/insightforge-ai.git
+cd insightforge-ai
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Server runs on:
+
+```
+http://localhost:8000
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:3000
+```
 
 ---
 
 # Project Structure
 
+```
 insightforge-ai
 
-backend  
-│  
-├ ingestion  
-├ profiling  
-├ semantics  
-├ analytics  
-├ visualization  
-├ services  
+backend
+│
+├ ingestion
+├ profiling
+├ semantics
+├ analytics
+├ visualization
+├ services
+│
+└ app
 
-frontend  
-│  
-├ components  
-├ pages  
+frontend
+│
+├ components
+├ pages
+└ styles
 
-docs  
+docs
+│
+└ screenshots
 
-requirements.txt  
-README.md  
-LICENSE  
+README.md
+LICENSE
+requirements.txt
+```
 
 ---
 
 # Example Workflow
 
 1 Upload dataset  
-
-2 System detects header rows and cleans schema  
-
+2 System detects header rows  
 3 Columns are profiled  
-
-4 Semantic roles are assigned  
-
-5 Analytics plan is generated  
-
-6 Statistics and insights are computed  
-
-7 Charts are recommended automatically  
-
-8 Dashboard is generated  
+4 Semantic roles assigned  
+5 Analytics plan generated  
+6 Statistics computed  
+7 Charts generated  
+8 Dashboard rendered  
 
 ---
 
-# Future Improvements
+# Future Roadmap
 
-Planned capabilities include
+Planned capabilities:
 
-• Forecasting models  
-• Machine learning anomaly detection  
-• Natural language data queries  
-• Predictive analytics  
-• Automated reporting  
+- ML-based anomaly detection
+- forecasting models
+- natural language data queries
+- automated reporting
+- decision intelligence engine
 
 ---
 
 # Author
 
-Madhur Gattani  
+**Madhur Gattani**
 
 MS Information Systems  
 Seidenberg School of Computer Science  
-Pace University  
+Pace University
 
 ---
 
 # License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
