@@ -1,4 +1,5 @@
 # InsightForge AI
+MIT License
 ## Autonomous Data Intelligence Platform
 
 InsightForge AI is an automated analytics platform that transforms raw datasets into actionable business intelligence.
